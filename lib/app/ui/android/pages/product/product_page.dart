@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/app/blocs/product_bloc.dart';
 import 'package:shopping/app/models/product-details.model.dart';
 import 'package:shopping/app/models/product-list-item.model.dart';
 import 'package:shopping/app/shared/components/shared/add_to_cart/add_to_cart_widget.dart';
 import 'package:shopping/app/shared/components/shared/progress_indicator/progress_indicator_widget.dart';
+import 'package:shopping/app/ui/android/android_module.dart';
+
+import 'product_bloc.dart';
 
 class ProductPage extends StatefulWidget {
   final String tag;
@@ -16,7 +18,7 @@ class ProductPage extends StatefulWidget {
 
 class _ProductPageState extends State<ProductPage> {
   final String tag;
-  final _bloc = ProductBloc();
+  final _bloc = AndroidModule.to.getBloc<ProductBloc>();
 
   _ProductPageState({@required this.tag});
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/app/app_module.dart';
-import 'package:shopping/app/blocs/cart_bloc.dart';
+import 'package:shopping/app/shared/blocs/cart_bloc.dart';
 import 'package:shopping/app/models/cart-item.model.dart';
 import 'package:shopping/app/ui/android/pages/account/account_page.dart';
 import 'package:shopping/app/ui/android/pages/cart/cart_page.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/app/app_module.dart';
-import 'package:shopping/app/blocs/user_bloc.dart';
+import 'package:shopping/app/shared/blocs/user_bloc.dart';
 import 'package:shopping/app/models/create-user-model.dart';
 import 'package:shopping/app/shared/validators/custom.validator.dart';
 

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping/app/app_module.dart';
-import 'package:shopping/app/blocs/home_bloc.dart';
 import 'package:shopping/app/models/category-list-item.model.dart';
 import 'package:shopping/app/models/product-list-item.model.dart';
+import 'package:shopping/app/shared/blocs/home_bloc.dart';
 import 'package:shopping/app/shared/components/category/category_list/category_list_widget.dart';
 import 'package:shopping/app/shared/components/product/product_list/product_list_widget.dart';
 

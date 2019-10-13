@@ -2,30 +2,37 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:dio/dio.dart';
 import 'package:shopping/app/models/product-details.model.dart';
 import 'package:shopping/app/models/product-list-item.model.dart';
-import 'package:shopping/app/settings.dart';
+import 'package:shopping/app/shared/custom_dio/custom_dio.dart';
 
 class ProductRepository extends Disposable {
-  Future<List<ProductListItemModel>> getAll() async {
-    var url = "${Settings.apiUrl}${Settings.apiVersion}/products";
+  final CustomDio dio;
 
-    var response = await Dio().get(url);
+  ProductRepository(this.dio);
+
+  Future<List<ProductListItemModel>> getAll() async {
+    var url = "/products";
+
+    var response = await dio.client.get(url,
+          options: Options(extra: {'refresh': false}));
     return (response.data as List)
         .map((c) => ProductListItemModel.fromJson(c))
         .toList();
   }
 
   Future<ProductDetailsModel> get(String tag) async {
-    var url = "${Settings.apiUrl}${Settings.apiVersion}/products/$tag";
+    var url = "/products/$tag";
 
-    var response = await Dio().get(url);
+    var response = await dio.client.get(url,
+          options: Options(extra: {'refresh': false}));
     return ProductDetailsModel.fromJson(response.data);
   }
 
   Future<List<ProductListItemModel>> getByCategory(String category) async {
     var url =
-        "${Settings.apiUrl}${Settings.apiVersion}/categories/$category/products";
+        "/categories/$category/products";
 
-    var response = await Dio().get(url);
+    var response = await dio.client.get(url,
+          options: Options(extra: {'refresh': false}));
     return (response.data as List)
         .map((c) => ProductListItemModel.fromJson(c))
         .toList();

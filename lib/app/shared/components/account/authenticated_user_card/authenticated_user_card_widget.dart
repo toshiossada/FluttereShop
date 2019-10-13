@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/app/app_module.dart';
-import 'package:shopping/app/blocs/user_bloc.dart';
+import 'package:shopping/app/shared/blocs/user_bloc.dart';
 import 'package:shopping/app/models/user.model.dart';
 
 class AuthenticatedUserCardWidget extends StatelessWidget {

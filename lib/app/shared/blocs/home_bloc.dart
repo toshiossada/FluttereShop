@@ -1,13 +1,14 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:rxdart/subjects.dart';
+import 'package:shopping/app/app_module.dart';
 import 'package:shopping/app/models/category-list-item.model.dart';
 import 'package:shopping/app/models/product-list-item.model.dart';
 import 'package:shopping/app/repositories/category_repository.dart';
 import 'package:shopping/app/repositories/product_repository.dart';
 
 class HomeBloc extends BlocBase {
-  final categoryRepository = new CategoryRepository();
-  final productRepository = new ProductRepository();
+  final categoryRepository = AppModule.to.getDependency<CategoryRepository>();
+  final productRepository = AppModule.to.getDependency<ProductRepository>();
 
   List<ProductListItemModel> _products;
   List<CategoryListItemModel> _categories;

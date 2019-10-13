@@ -2,7 +2,7 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:rxdart/subjects.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shopping/app/settings.dart';
+import 'package:shopping/app/shared/settings.dart';
 import 'package:shopping/app/themes/dark-yellow.theme.dart';
 import 'package:shopping/app/themes/dark.theme.dart';
 import 'package:shopping/app/themes/light.theme.dart';

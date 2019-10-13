@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/app/app_module.dart';
-import 'package:shopping/app/blocs/home_bloc.dart';
-import 'package:shopping/app/blocs/theme_bloc.dart';
+import 'package:shopping/app/shared/blocs/home_bloc.dart';
+import 'package:shopping/app/shared/blocs/theme_bloc.dart';
 import 'package:shopping/app/models/category-list-item.model.dart';
-import 'package:shopping/app/settings.dart';
+import 'package:shopping/app/shared/settings.dart';
 
 class CategoryCardWidget extends StatelessWidget {
   final CategoryListItemModel item;

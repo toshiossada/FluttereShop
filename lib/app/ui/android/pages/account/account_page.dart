@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/app/app_module.dart';
-import 'package:shopping/app/blocs/user_bloc.dart';
+import 'package:shopping/app/shared/blocs/user_bloc.dart' as Shared;
 import 'package:shopping/app/models/user.model.dart';
 import 'package:shopping/app/shared/components/account/authenticated_user_card/authenticated_user_card_widget.dart';
 import 'package:shopping/app/shared/components/account/unauthenticated_user_card/unauthenticated_user_card_widget.dart';
@@ -14,7 +14,7 @@ class AccountPage extends StatefulWidget {
 class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
-    var bloc = AppModule.to.getBloc<UserBloc>();
+    var bloc = AppModule.to.getBloc<Shared.UserBloc>();
 
     return StreamBuilder<UserModel>(
         stream: bloc.outUser,

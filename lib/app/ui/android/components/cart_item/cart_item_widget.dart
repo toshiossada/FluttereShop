@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shopping/app/app_bloc.dart';
 import 'package:shopping/app/app_module.dart';
-import 'package:shopping/app/blocs/cart_bloc.dart';
+import 'package:shopping/app/shared/blocs/cart_bloc.dart';
 import 'package:shopping/app/models/cart-item.model.dart';
 
 
 class CartItemWidget extends StatelessWidget {
   final CartItemModel item;
+  final bloc = AppModule.to.getBloc<CartBloc>();
 
   CartItemWidget({this.item});
 
   @override
   Widget build(BuildContext context) {
-    final bloc = AppModule.to.getBloc<CartBloc>();
+    
     final price = NumberFormat('#,##0.00', 'pt_BR');
 
     return Container(

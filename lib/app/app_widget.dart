@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:shopping/app/app_module.dart';
-import 'package:shopping/app/blocs/theme_bloc.dart';
+import 'package:shopping/app/shared/blocs/theme_bloc.dart';
 import 'package:shopping/app/themes/light.theme.dart';
 import 'package:shopping/app/ui/android/android_module.dart';
 import 'package:shopping/app/ui/ios/ios_module.dart';

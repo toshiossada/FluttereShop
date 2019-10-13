@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/app/app_module.dart';
-import 'package:shopping/app/blocs/home_bloc.dart';
+import 'package:shopping/app/shared/blocs/home_bloc.dart' as Shared;
 import 'package:shopping/app/models/category-list-item.model.dart';
 import 'package:shopping/app/models/product-list-item.model.dart';
 import 'package:shopping/app/shared/components/category/category_list/category_list_widget.dart';
@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final bloc = AppModule.to.getBloc<HomeBloc>();
+    final bloc = AppModule.to.getBloc<Shared.HomeBloc>();
     return Padding(
       padding: EdgeInsets.all(10),
       child: ListView(
