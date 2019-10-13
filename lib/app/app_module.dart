@@ -23,9 +23,9 @@ import 'package:shopping/app/blocs/user_bloc.dart';
 class AppModule extends ModuleWidget {
   @override
   List<Bloc> get blocs => [
+        Bloc((i) => HomeBloc()),
         Bloc((i) => ThemeBloc()),
         Bloc((i) => ProductBloc()),
-        Bloc((i) => HomeBloc()),
         Bloc((i) => CartBloc()),
         Bloc((i) => ProgressIndicatorBloc()),
         Bloc((i) => LoaderBloc()),
