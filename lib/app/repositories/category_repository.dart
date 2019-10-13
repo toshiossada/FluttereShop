@@ -1,4 +1,5 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
+import 'package:dio/dio.dart';
 import 'package:shopping/app/models/category-list-item.model.dart';
 import 'package:shopping/app/shared/custom_dio/custom_dio.dart';
 
@@ -6,11 +7,12 @@ class CategoryRepository extends Disposable {
   final CustomDio dio;
 
   CategoryRepository(this.dio);
-  
+
   Future<List<CategoryListItemModel>> getAll() async {
     var url = '/categories';
 
-    var response = await dio.client.get(url);
+    var response =
+        await dio.client.get(url, options: Options(extra: {'refresh': false}));
 
     return (response.data as List)
         .map((c) => CategoryListItemModel.fromJson(c))
