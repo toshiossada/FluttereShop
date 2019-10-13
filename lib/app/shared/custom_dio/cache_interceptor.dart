@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
@@ -9,15 +8,17 @@ class CacheInterceptor extends InterceptorsWrapper {
   Future onRequest(RequestOptions options) async {
     print('Request[${options.method}] => PATH: ${options.path}');
 
+    var prefs = await SharedPreferences.getInstance();
+    var uri = options.uri;
+
+
     if (options.extra.containsKey('refresh')) {
-      if (options.extra['refresh']) {
-        return options;
+      if (options.extra['refresh'] || !prefs.containsKey('$uri')) {
+        return super.onRequest(options);
       } else {
-        return getCache(options.uri);
+        return getCache(uri);
       }
     }
-
-    
 
     // TODO: implement onRequest
     return super.onRequest(options);
