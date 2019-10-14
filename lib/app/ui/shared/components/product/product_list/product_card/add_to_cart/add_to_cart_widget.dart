@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/app/app_module.dart';
 import 'package:shopping/app/models/cart-item.model.dart';
 import 'package:shopping/app/models/product-list-item.model.dart';
 import 'package:shopping/app/ui/shared/blocs/cart_bloc.dart';
+import 'package:shopping/app/ui/ui_module.dart';
 
 class AddToCartWidget extends StatefulWidget {
   final ProductListItemModel item;
   bool itemInCart;
   CartItemModel cartItem;
-  final _bloc = AppModule.to.getBloc<CartBloc>();
+  final _bloc = UiModule.to.getBloc<CartBloc>();
 
   AddToCartWidget({@required this.item}) {
     cartItem = CartItemModel(
@@ -27,7 +27,7 @@ class AddToCartWidget extends StatefulWidget {
 }
 
 class _AddToCartWidgetState extends State<AddToCartWidget> {
-  final _bloc = AppModule.to.getBloc<CartBloc>();
+  final _bloc = UiModule.to.getBloc<CartBloc>();
   Color color;
   IconData icon;
   Function callback;

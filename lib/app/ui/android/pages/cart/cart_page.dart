@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:shopping/app/app_module.dart';
 import 'package:shopping/app/ui/shared/blocs/cart_bloc.dart' as Shared;
 import 'package:shopping/app/models/cart-item.model.dart';
 import 'package:shopping/app/ui/shared/components/loader/loader_widget.dart';
 import 'package:shopping/app/ui/android/components/cart_item/cart_item_widget.dart';
+import 'package:shopping/app/ui/ui_module.dart';
 
 class CartPage extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   final price = new NumberFormat('#,##00.00', 'pt_BR');
   var items = List<CartItemModel>();
-  var _bloc=  AppModule.to.getBloc<Shared.CartBloc>();
+  var _bloc=  UiModule.to.getBloc<Shared.CartBloc>();
 
   @override
   Widget build(BuildContext context) {

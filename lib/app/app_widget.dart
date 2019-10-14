@@ -15,6 +15,7 @@ class AppWidget extends StatelessWidget {
         builder: (context, snapshot) {
           return MaterialApp(
             title: 'Flutter Slidy',
+            debugShowCheckedModeBanner: false,
             theme: snapshot.data,
             home: UiModule(),
           );

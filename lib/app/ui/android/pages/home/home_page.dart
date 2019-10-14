@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/app/app_module.dart';
 import 'package:shopping/app/ui/shared/blocs/home_bloc.dart' as Shared;
 import 'package:shopping/app/models/category-list-item.model.dart';
 import 'package:shopping/app/models/product-list-item.model.dart';
 import 'package:shopping/app/ui/shared/components/category/category_list/category_list_widget.dart';
 import 'package:shopping/app/ui/shared/components/product/product_list/product_list_widget.dart';
+import 'package:shopping/app/ui/ui_module.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final bloc = AppModule.to.getBloc<Shared.HomeBloc>();
+    final bloc = UiModule.to.getBloc<Shared.HomeBloc>();
     return Padding(
       padding: EdgeInsets.all(10),
       child: ListView(
@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
           StreamBuilder<List<CategoryListItemModel>>(
             stream: bloc.outCategories,
             builder: (context, snapshot) {
+              if(!snapshot.hasData) return Center(child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.grey),));
               return CategoryListWidget(
                 categories: snapshot.data,
               );
@@ -50,6 +51,7 @@ class _HomePageState extends State<HomePage> {
           StreamBuilder<List<ProductListItemModel>>(
             stream: bloc.outProducts,
             builder: (context, snapshot) {
+              if(!snapshot.hasData) return Center(child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.grey),));
               return ProductListWidget(
                 products: snapshot.data,
               );

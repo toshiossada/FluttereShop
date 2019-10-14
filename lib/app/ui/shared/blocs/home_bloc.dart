@@ -33,7 +33,7 @@ class HomeBloc extends BlocBase {
   getCategories() {
     _selectedCategoryController.add(_selectedCategory);
     categoryRepository.getAll().then((data) {
-      data.add(CategoryListItemModel(id: 'all', title: 'Todos', tag: 'todos'));
+      data.add(CategoryListItemModel(id: 'all', title: 'Todos', tag: 'all'));
       this._categories = data;
       _categoriesController.add(this._categories);
     });
@@ -47,7 +47,7 @@ class HomeBloc extends BlocBase {
   }
 
   getProductsByCategory() {
-    if (_selectedCategory == 'todos')
+    if (_selectedCategory == 'all')
       getProducts();
     else
       productRepository.getByCategory(_selectedCategory).then((data) {

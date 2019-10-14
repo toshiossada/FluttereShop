@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:shopping/app/app_module.dart';
 import 'package:shopping/app/models/cart-item.model.dart';
 import 'package:shopping/app/ui/shared/blocs/cart_bloc.dart';
+import 'package:shopping/app/ui/ui_module.dart';
 
 
 class CartItemWidget extends StatelessWidget {
   final CartItemModel item;
-  final bloc = AppModule.to.getBloc<CartBloc>();
+  final bloc = UiModule.to.getBloc<CartBloc>();
 
   CartItemWidget({this.item});
 

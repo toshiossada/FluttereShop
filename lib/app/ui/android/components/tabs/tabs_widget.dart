@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/app/app_module.dart';
 import 'package:shopping/app/models/cart-item.model.dart';
 import 'package:shopping/app/ui/android/pages/account/account_page.dart';
 import 'package:shopping/app/ui/android/pages/cart/cart_page.dart';
 import 'package:shopping/app/ui/android/pages/home/home_page.dart';
 import 'package:shopping/app/ui/shared/blocs/cart_bloc.dart';
+import 'package:shopping/app/ui/ui_module.dart';
 
 class TabsWidget extends StatelessWidget {
-  final _bloc = AppModule.to.getBloc<CartBloc>();
+  final _bloc = UiModule.to.getBloc<CartBloc>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

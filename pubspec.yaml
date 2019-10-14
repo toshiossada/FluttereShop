@@ -30,6 +30,7 @@ dependencies:
   shared_preferences: ^0.5.3+4
   rxdart: ^0.22.3
   bloc_pattern: ^2.4.0+2
+  flutter_launcher_icons: ^0.7.3
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +88,7 @@ flutter:
     - assets/categories/light/moda.png
     - assets/categories/light/telefonia.png
     - assets/categories/light/tv.png
+    - assets/categories/light/all.png    
     - assets/categories/dark/automotivo.png
     - assets/categories/dark/brinquedos.png
     - assets/categories/dark/decor.png
@@ -96,6 +98,7 @@ flutter:
     - assets/categories/dark/moda.png
     - assets/categories/dark/telefonia.png
     - assets/categories/dark/tv.png
+    - assets/categories/dark/all.png
     - assets/categories/dark-yellow/automotivo.png
     - assets/categories/dark-yellow/brinquedos.png
     - assets/categories/dark-yellow/decor.png
@@ -105,3 +108,11 @@ flutter:
     - assets/categories/dark-yellow/moda.png
     - assets/categories/dark-yellow/telefonia.png
     - assets/categories/dark-yellow/tv.png
+    - assets/categories/dark-yellow/all.png    
+    - assets/icon.png
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon.png"
