@@ -1,11 +1,9 @@
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:shopping/app/app_module.dart';
 import 'package:shopping/app/shared/blocs/theme_bloc.dart';
 import 'package:shopping/app/themes/light.theme.dart';
-import 'package:shopping/app/ui/android/android_module.dart';
-import 'package:shopping/app/ui/ios/ios_module.dart';
+import 'package:shopping/app/ui/ui_module.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -18,7 +16,7 @@ class AppWidget extends StatelessWidget {
           return MaterialApp(
             title: 'Flutter Slidy',
             theme: snapshot.data,
-            home: Platform.isIOS ? IosModule() : AndroidModule(),
+            home: UiModule(),
           );
         });
   }

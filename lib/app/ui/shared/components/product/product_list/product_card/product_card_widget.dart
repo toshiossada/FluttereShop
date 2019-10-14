@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shopping/app/models/product-list-item.model.dart';
-import 'package:shopping/app/shared/components/add_to_cart/add_to_cart_widget.dart';
 import 'package:shopping/app/ui/android/pages/product/product_page.dart';
+import 'package:shopping/app/ui/shared/components/add_to_cart/add_to_cart_widget.dart';
 
 class ProductCardWidget extends StatelessWidget {
   final ProductListItemModel item;

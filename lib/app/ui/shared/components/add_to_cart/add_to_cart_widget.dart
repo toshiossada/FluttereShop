@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/app/app_module.dart';
-import 'package:shopping/app/shared/blocs/cart_bloc.dart';
 import 'package:shopping/app/models/cart-item.model.dart';
 import 'package:shopping/app/models/product-list-item.model.dart';
+import 'package:shopping/app/ui/shared/blocs/cart_bloc.dart';
 
 class AddToCartWidget extends StatefulWidget {
   final ProductListItemModel item;

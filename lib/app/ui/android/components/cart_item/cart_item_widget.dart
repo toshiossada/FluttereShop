@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:shopping/app/app_bloc.dart';
 import 'package:shopping/app/app_module.dart';
-import 'package:shopping/app/shared/blocs/cart_bloc.dart';
 import 'package:shopping/app/models/cart-item.model.dart';
+import 'package:shopping/app/ui/shared/blocs/cart_bloc.dart';
 
 
 class CartItemWidget extends StatelessWidget {
