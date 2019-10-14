@@ -62,6 +62,7 @@ class CartItemWidget extends StatelessWidget {
                           onPressed: () {
                             bloc.decrease(item);
                           },
+                          
                         ),
                       ),
                       Container(

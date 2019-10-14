@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:shopping/app/app_module.dart';
 import 'package:shopping/app/shared/blocs/cart_bloc.dart' as Shared;
 import 'package:shopping/app/models/cart-item.model.dart';
-import 'package:shopping/app/shared/components/shared/loader/loader_widget.dart';
+import 'package:shopping/app/shared/components/loader/loader_widget.dart';
 import 'package:shopping/app/ui/android/components/cart_item/cart_item_widget.dart';
 
 class CartPage extends StatefulWidget {
