@@ -5,7 +5,10 @@ import 'package:shopping/app/models/cart-item.model.dart';
 class CartBloc extends BlocBase {
   var _cart = List<CartItemModel>();
   final _cartController = BehaviorSubject<List<CartItemModel>>();
+  final _itemInCartController= BehaviorSubject<bool>();
+
   Stream<List<CartItemModel>> get outCart => _cartController.stream;
+  Stream<bool> get outItemInCart => _itemInCartController.stream;
 
   final _totalController = BehaviorSubject<double>();
 
@@ -19,12 +22,14 @@ class CartBloc extends BlocBase {
     _cart.add(item);
     calcularTotal();
     _cartController.add(_cart);
+    _itemInCartController.add(itemInCart(item));
   }
 
   remove(CartItemModel item) {
     _cart.removeWhere((x) => x.id == item.id);
     calcularTotal();
     _cartController.add(_cart);
+    _itemInCartController.add(itemInCart(item));
   }
 
   itemInCart(CartItemModel item) {
@@ -62,3 +67,4 @@ class CartBloc extends BlocBase {
     super.dispose();
   }
 }
+
